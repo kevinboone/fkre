@@ -1,0 +1,57 @@
+.\" Copyright (C) 2020 Kevin Boone 
+.\" Permission is granted to any individual or institution to use, copy, or
+.\" redistribute this software so long as all of the original files are
+.\" included, that it is not sold for profit, and that this copyright notice
+.\" is retained.
+.\"
+.TH fkre 1 "June 2020"
+.SH NAME
+fkre (Flesch-Kincaid Reading Ease)
+
+.SH SYNOPSIS
+.B fkre\ [\-\-html] [\-\-version] {filename}
+.PP
+
+.SH DESCRIPTION
+\fIfkre\fR is utility for estimating the Flesh-Kincaid readability ease
+score for English-language text, and other readability metrics.
+It has an HTML mode that
+can exclude HTML tags that would otherwise confuse the calculation. In
+HTML mode the utility can also count the number of words in each
+subheading, allowing the detection of over-long sections.
+
+\fIfkre\fR estimates the number of passive-voice expressions, which many
+writes like to avoid where practicable. 
+
+.SH THE FLESCH-KINCARD SCORE
+
+The FK readability ease score is calculated as
+
+206.835 - 1.015 * words_per_sentence - 84.6 * syllables_per_word.
+
+Most English texts have scores in the range 10-100, although both
+higher and lower scores can be contrived. "A cat sat on a mat"
+scores 116. In practice, most users of the FK score aim for
+values of 60 or higher when writing for a general readership. 
+Specialist and scientific publications might be considered quite
+accessible by their readers with an FK score higher than 30.  
+
+Note that the FK score considers only sentence length and word
+structure. Other factors also affect readability, such as the
+use of subheadings. `fkre` reports some of these metrics separately,
+if sufficient information is available. 
+
+.SH "OPTIONS"
+
+.TP
+.BI -t,\-\-html
+.LP
+HTML format -- exclude HTML tags from counting.
+
+
+.SH "AUTHOR"
+
+\fIfkre\fR is maintained by Kevin Boone. For more information see
+https://github.com/kevinboone/fkre.
+
+.\" end of file
