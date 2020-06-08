@@ -7,7 +7,7 @@ HTML mode the utility can also count the number of words in each
 subheading, allowing the detection of over-long sections.
 
 `fkre` estimates the number of passive-voice expressions, which many
-writes like to avoid where practicable. 
+writers like to avoid where practicable. 
 
 FK scores are frequently used by web-authoring and search-engine
 optimization tools, as well as some word processors. I was surprised
